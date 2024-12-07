@@ -39,3 +39,6 @@ O aluguel de carros incluirá funcionalidades como o cálculo do preço total co
 ## Possíveis APIs/Bibliotecas a serem usadas
 - **Google Maps API**: Para exibição de locais de retirada e devolução de carros, oferecendo geolocalização precisa dos pontos de aluguel.
 - **iText ou Apache POI**: Para geração de relatórios em PDF ou Excel, como históricos de reservas e faturamento.
+
+  ![image](https://github.com/user-attachments/assets/d56a1bbd-ed4f-480b-94b0-5de8fc21fcd3)
+
