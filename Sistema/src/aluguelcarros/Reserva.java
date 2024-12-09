@@ -9,6 +9,12 @@ public class Reserva {
     private double preco;
     private boolean statusPagamento;
 
+    public Reserva(LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento){
+    this.dataInicio = dotaInicio;
+    this.dataFim = dataFim;
+    this.preco = preco;
+    this.statusPagamento = statusPagamento;
+    }
     public void alterarStatusPagamento() {
 
     }
