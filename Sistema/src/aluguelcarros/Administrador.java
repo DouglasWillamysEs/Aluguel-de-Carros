@@ -53,7 +53,7 @@ public class Administrador {
     public void cadastrar(Carro c1) {
 
     }
-    public void editar(Carro c1, String cor, String marca, String modelo, String id, double preco, boolean disponibilidade) {
+    public void editar(Carro c1, String cor, String marca, String modelo, double preco, boolean disponibilidade) {
 
     }
     public void remover(Carro c1) {
