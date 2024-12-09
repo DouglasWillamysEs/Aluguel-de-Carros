@@ -8,7 +8,7 @@ public class Carro {
     private double preco;
     private boolean disponibilidade;
 
-    public Carro (String cor, String marca, String modelo, String id, double preco, boolean disponibilidade) {
+    public Carro (String cor, String marca, String modelo, double preco, boolean disponibilidade) {
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
