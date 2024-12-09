@@ -4,11 +4,12 @@ import java.time.LocalDateTime;
 
 public class Usuario {
 
-    private String id;
     private String nome;
     private String cpf;
     private String email;
     private String senha;
+    private String Cadastrados = newArrayList();
+    private ArrayList<Usuario> cadastrados = new ArrayList();
 
     public Usuario (String id, String nome, String cpf, String email, String senha) {
         this.id = id;
