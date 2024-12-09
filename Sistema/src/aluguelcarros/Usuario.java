@@ -11,25 +11,14 @@ public class Usuario {
     private String Cadastrados = newArrayList();
     private ArrayList<Usuario> cadastrados = new ArrayList();
 
-    public Usuario (String id, String nome, String cpf, String email, String senha) {
-        this.id = id;
+    public Usuario (String nome, String cpf, String email, String senha) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
     }
 
-    
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNome() {
+        public String getNome() {
         return nome;
     }
 
