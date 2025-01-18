@@ -11,7 +11,6 @@ public class Reserva {
     private boolean statusPagamento;
     private boolean ativa;
 
-<<<<<<< HEAD
     public int getIdReserva() {
         return idReserva;
     }
@@ -76,16 +75,3 @@ public class Reserva {
 }
 
 
-=======
-    public Reserva(LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento){
-    this.dataInicio = dotaInicio;
-    this.dataFim = dataFim;
-    this.preco = preco;
-    this.statusPagamento = statusPagamento;
-    }
-    public void alterarStatusPagamento() {
-
-    }
-
-}
->>>>>>> 001c7da5f20a58eaabf7f7b1ebe7d0b46ebc7b3f

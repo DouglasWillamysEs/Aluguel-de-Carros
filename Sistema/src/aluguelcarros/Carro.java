@@ -1,8 +1,5 @@
 package aluguelcarros;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-
 public class Carro {
     private String modelo;
     private String marca;
@@ -12,12 +9,8 @@ public class Carro {
     private int id;
     private Controlador controlador;
 
-<<<<<<< HEAD
 
     public Carro (int id, String cor, String marca, String modelo, double preco, boolean disponibilidade) {
-=======
-    public Carro (String cor, String marca, String modelo, double preco, boolean disponibilidade) {
->>>>>>> 001c7da5f20a58eaabf7f7b1ebe7d0b46ebc7b3f
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
