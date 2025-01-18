@@ -1,20 +1,35 @@
 package aluguelcarros;
 
-public class Carro {
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
+public class Carro {
     private String modelo;
     private String marca;
     private String cor;
     private double preco;
     private boolean disponibilidade;
+    private int id;
+    private Controlador controlador;
 
-    public Carro (String cor, String marca, String modelo, String id, double preco, boolean disponibilidade) {
+
+    public Carro (int id, String cor, String marca, String modelo, double preco, boolean disponibilidade) {
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
 
         this.preco = preco;
-        this.disponibilidade = disponibilidade;   
+        this.disponibilidade = disponibilidade;
+        this.id = id;
+    }
+
+    //Getters e setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModelo() {
@@ -56,10 +71,20 @@ public class Carro {
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
-    public void alterarDisp(boolean disponibilidade) {
 
-    }
+    
     public void mostrarDetalhes() {
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Marca: " + marca);
+        System.out.println("Cor: " + cor);
+        System.out.println("Preço: " + preco);
+        System.out.println("Disponibilidade: " + disponibilidade);
 
     }
+
+
+
 }
+
+
+

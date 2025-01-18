@@ -1,62 +1,35 @@
 package aluguelcarros;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 
-public class Administrador {
-    private String nome;
-    private String cpf;
-    private String email;
-    private String senha;
-    private ArrayList<Carro> carrosAll = new ArrayList();
-    private ArrayList<Carro> carrosDisp = new ArrayList();
-    private ArrayList<Carro> carrosNoDisp = new ArrayList();
+public class Administrador extends Pessoa {
 
-    public Administrador (String nome, String cpf, String email, String senha) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.senha = senha;
+    private Controlador controlador;
 
+    public Administrador(String nome, String cpf, int idade, String email, String senha, Controlador controlador) {
+        super(nome, cpf, idade, email, senha);
+        this.controlador = controlador;
     }
 
-    public String getNome() {
-        return nome;
+    public void cadastrarCarroComoAdmin(Pessoa pessoa, String cor, String marca, String modelo, double preco, boolean disponibilidade) {
+        controlador.cadastrarCarro(pessoa, cor, marca, modelo, preco, disponibilidade);
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void removerCarroComoAdmin(Pessoa pessoa, int  id) {
+        controlador.removerCarro(pessoa, id);
     }
 
-    public String getCpf() {
-        return cpf;
+    public void listarCarrosComoAdmin() {
+        controlador.listarCarros();
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+
+
+    public Controlador getControlador() {
+        return controlador;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-    public void cadastrar(Carro c1) {
-
-    }
-    public void editar(Carro c1, String cor, String marca, String modelo, String id, double preco, boolean disponibilidade) {
-
-    }
-    public void remover(Carro c1) {
-
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
     }
 }
