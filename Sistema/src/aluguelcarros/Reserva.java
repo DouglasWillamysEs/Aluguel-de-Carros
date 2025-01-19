@@ -58,13 +58,6 @@ public class Reserva {
         this.statusPagamento = statusPagamento;
     }
 
-    public boolean validarDataReserva() {
-        if (dataInicio.isAfter(dataFim)) {
-            return false;
-        }
-        return true;
-    }
-
     public boolean isAtiva() {
         return ativa;
     }
@@ -73,5 +66,7 @@ public class Reserva {
         this.ativa = ativa;
     }
 }
+
+
 
 
