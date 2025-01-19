@@ -7,7 +7,8 @@ public class Pessoa {
     private String email;
     private String senha;
     private int idade;
-    private boolean cadastrado = false; // Inicialmente, a pessoa é um "Guest"
+    private boolean cadastrado;
+    private Controlador controlador;
 
     public Pessoa(String nome, String cpf, int idade, String email, String senha) {
         this.nome = nome;
@@ -15,9 +16,11 @@ public class Pessoa {
         this.idade = idade;
         this.email = email;
         this.senha = senha;
+        this.cadastrado = false;
     }
 
-    public boolean getCadastrado() {
+    // Getters e Setters
+    public boolean isCadastrado() {
         return cadastrado;
     }
 
@@ -25,7 +28,6 @@ public class Pessoa {
         this.cadastrado = cadastrado;
     }
 
-    // Getters e Setters para os demais atributos
     public String getNome() {
         return nome;
     }
@@ -64,5 +66,9 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public void loginPessoa(Pessoa pessoa, String email, String senha) {
+        pessoa = controlador.realizarLogin(pessoa, email, senha);
     }
 }
