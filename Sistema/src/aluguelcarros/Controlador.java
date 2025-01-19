@@ -1,15 +1,17 @@
 package aluguelcarros;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.time.Duration;
 
 public class Controlador {
 
     private ArrayList<Carro> carros = new ArrayList<>();
     private ArrayList<Usuario> usuarios = new ArrayList<>();
     private ArrayList<Administrador> administradores = new ArrayList<>();
+    private ArrayList<Promocao> promocoes = new ArrayList<>();
     private ArrayList<Reserva> reservas = new ArrayList<>();
+    private ArrayList<Promocao> promos = new ArrayList<>();
     private ArrayList<Aluguel> alugueis = new ArrayList<>();
 
 
@@ -17,7 +19,7 @@ public class Controlador {
     // Método para cadastrar um carro
     public void cadastrarCarro(Pessoa pessoa, String cor, String marca, String modelo, double preco, boolean disponibilidade) {
         if (pessoa instanceof Administrador) {
-            int id = carros.size() + 1; // Gera um ID único
+            int id = carros.size() + 1;
             Carro novoCarro = new Carro(id, cor, marca, modelo, preco, disponibilidade);
             carros.add(novoCarro);
 
@@ -38,7 +40,7 @@ public class Controlador {
                     carro.setModelo(modelo);
                     carro.setPreco(preco);
 
-                    System.out.println("Carro atualizado com sucesso:");
+                    System.out.println("Carro atualizado:");
                     System.out.println("- ID: " + id + ", Marca: " + marca +
                             ", Cor: " + cor + ", Preço: " + preco);
 
@@ -66,7 +68,7 @@ public class Controlador {
                 if (carro.getId() == id) {
                     carros.remove(i);
 
-                    System.out.println("Carro removido com sucesso: ID " + id + ", Modelo: " + carro.getModelo());
+                    System.out.println("Carro removido: ID " + id + ", Modelo: " + carro.getModelo());
                     carroEncontrado = true;
                     break;
                 }
@@ -96,7 +98,7 @@ public class Controlador {
     public void addAluguel(LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento) {
 
         for (Reserva reserva : reservas) {
-            if (reserva.isAtiva()) { // Verifica se a reserva está ativa
+            if (reserva.isAtiva()) { 
                 Aluguel aluguel = new Aluguel(reserva.getIdReserva(), dataInicio, dataFim, preco, statusPagamento);
                 alugueis.add(aluguel);
                 System.out.println("Aluguel adicionado para a reserva ID: " + reserva.getIdReserva());
@@ -122,7 +124,7 @@ public class Controlador {
     public Carro buscarCarroPorId(int id) {
         if (carros == null) {
             System.out.println("Lista de carros não inicializada.");
-            return null;  // ou lançar uma exceção, se necessário
+            return null;  
         }
 
         for (Carro carro : carros) {
@@ -131,7 +133,7 @@ public class Controlador {
             }
         }
         System.out.println("Carro com ID " + id + " não encontrado.");
-        return null;  // ou lançar uma exceção, se necessário
+        return null;
     }
 
     //Método pra buscar reserva pelo id
@@ -151,9 +153,9 @@ public class Controlador {
     }
 
     public void cadastrarUsuario(Pessoa pessoa, String nome, String cpf, int idade, String email, String senha, Controlador controlador) {
-        if (!pessoa.getCadastrado()) { // Verifica se a pessoa é um "Guest"
+        if (!pessoa.isCadastrado()) {
             Usuario novoUsuario = new Usuario(nome, cpf, idade, email, senha, controlador);
-            novoUsuario.setCadastrado(true); // Define como "cadastrado"
+            pessoa.setCadastrado(true);
             usuarios.add(novoUsuario);
 
             System.out.println("Usuário cadastrado com sucesso! Nome: " + novoUsuario.getNome());
@@ -170,6 +172,15 @@ public class Controlador {
     }
 
 
+    public Usuario realizarLogin(Pessoa pessoa, String email, String senha) {
+        if(pessoa.isCadastrado())
+        for (Usuario usuario : usuarios) {
+            if (usuario.getEmail().equals(email) && usuario.getSenha().equals(senha)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
     public void adicionarReserva(Pessoa pessoa, int id, LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento) {
         if(pessoa instanceof Usuario) {
 
@@ -196,4 +207,4 @@ public class Controlador {
             System.out.println("Preco: " + reserva.getPreco());
         }
     }
-}
+    }
