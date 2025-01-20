@@ -17,12 +17,6 @@ public class Administrador extends Pessoa {
         controlador.removerCarro(pessoa, id);
     }
 
-    public void listarCarrosComoAdmin() {
-        controlador.listarCarros();
-    }
-
-
-
     public Controlador getControlador() {
         return controlador;
     }
