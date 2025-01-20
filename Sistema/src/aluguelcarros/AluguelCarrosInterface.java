@@ -21,12 +21,7 @@ public interface AluguelCarrosInterface {
     // Métodos para Gerenciamento de Aluguéis
     void adicionarAluguel(int idReserva, LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento);
     void listarAlugueis();
-
-    // Métodos para Gerenciamento de Promoções
-    void cadastrarPromocao(String descricao, double desconto);
-    void listarPromocoes();
-    void removerPromocao(int idPromocao);
-
+    
     // Métodos adicionais
     void buscarCarroPorId(int id);
     void buscarReservaPorId(int idReserva);
