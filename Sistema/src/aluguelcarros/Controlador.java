@@ -10,7 +10,6 @@ public class Controlador {
     private ArrayList<Usuario> usuarios = new ArrayList<>();
     private ArrayList<Administrador> administradores = new ArrayList<>();
     private ArrayList<Reserva> reservas = new ArrayList<>();
-    private ArrayList<Promocao> promos = new ArrayList<>();
     private ArrayList<Aluguel> alugueis = new ArrayList<>();
 
 
