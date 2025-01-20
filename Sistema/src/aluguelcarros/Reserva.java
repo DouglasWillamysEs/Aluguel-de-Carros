@@ -11,13 +11,6 @@ public class Reserva {
     private boolean statusPagamento;
     private boolean ativa;
 
-    public int getIdReserva() {
-        return idReserva;
-    }
-
-    public void setIdReserva(int idReserva) {
-        this.idReserva = idReserva;
-    }
 
     public Reserva(int idReserva, LocalDateTime dataInicio, LocalDateTime dataFim, double preco, boolean statusPagamento){
         this.dataInicio = dataInicio;
@@ -26,6 +19,14 @@ public class Reserva {
         this.statusPagamento = statusPagamento;
     }
 
+    public int getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(int idReserva) {
+        this.idReserva = idReserva;
+    }
+    
     public LocalDateTime getDataInicio() {
         return dataInicio;
     }
