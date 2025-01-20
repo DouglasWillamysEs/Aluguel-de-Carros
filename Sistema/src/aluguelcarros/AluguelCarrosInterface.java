@@ -7,7 +7,6 @@ public interface AluguelCarrosInterface {
     void cadastrarCarro(String cor, String marca, String modelo, double preco, boolean disponibilidade);
     void editarCarro(int id, String cor, String marca, String modelo, double preco);
     void removerCarro(int id);
-    void listarCarros();
 
     // Métodos para Gerenciamento de Usuários
     void cadastrarUsuario(String nome, String cpf, int idade, String email, String senha);
