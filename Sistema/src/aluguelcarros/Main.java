@@ -20,7 +20,7 @@ public class Main {
 
         c.cadastrarUsuario(guest, "Tigas da Silva", "234234", 23, "tigasdasilva@gmail.com", "3932939", c);
 
-        int idBuscado = 1; // ID do carro que você quer acessar
+        int idBuscado = 1; 
         Carro carroSelecionado = c.buscarCarroPorId(idBuscado);
         System.out.println(carroSelecionado.getCor());
 
