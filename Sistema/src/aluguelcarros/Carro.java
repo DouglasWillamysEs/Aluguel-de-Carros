@@ -68,20 +68,5 @@ public class Carro {
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
-
-    
-    public void mostrarDetalhes() {
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Marca: " + marca);
-        System.out.println("Cor: " + cor);
-        System.out.println("Preço: " + preco);
-        System.out.println("Disponibilidade: " + disponibilidade);
-
-    }
-
-
-
 }
-
-
 
